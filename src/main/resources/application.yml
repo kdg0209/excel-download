@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/excel?serverTimezone=Asia/Seoul
+    username: root
+    password: 123456789
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false #
+    properties:
+      hibernate:
+        format_sql: true
+    jackson:
+      time-zone: Asia/Seoul
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+logging:
+  level:
+    org.hibernate.type: trace
