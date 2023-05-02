@@ -4,7 +4,7 @@ import com.excel.download.domain.member.dao.MemberDao;
 import com.excel.download.domain.member.dto.MemberCreateRequest;
 import com.excel.download.domain.member.dto.MemberExcelDownload;
 import com.excel.download.domain.member.service.MemberService;
-import com.excel.download.global.common.ExcelUtils;
+import com.excel.download.global.common.ExcelUtilsV1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private final ExcelUtils excelUtils;
+    private final ExcelUtilsV1 excelUtils;
     private final MemberDao memberDao;
     private final MemberService memberService;
 

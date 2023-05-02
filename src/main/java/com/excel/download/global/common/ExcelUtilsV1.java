@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public final class ExcelUtils implements ExcelSupport {
+public final class ExcelUtilsV1 implements ExcelSupportV1 {
 
     private static final int MAX_ROW = 5000;
 

@@ -4,7 +4,7 @@ import com.excel.download.domain.post.dao.PostDao;
 import com.excel.download.domain.post.dto.PostCreateRequest;
 import com.excel.download.domain.post.dto.PostExcelDownload;
 import com.excel.download.domain.post.service.PostService;
-import com.excel.download.global.common.ExcelUtils;
+import com.excel.download.global.common.ExcelUtilsV1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PostController {
 
-    private final ExcelUtils excelUtils;
+    private final ExcelUtilsV1 excelUtils;
     private final PostDao postDao;
     private final PostService postService;
 
