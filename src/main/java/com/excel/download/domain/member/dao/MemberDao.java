@@ -39,4 +39,27 @@ public class MemberDao {
                 .from(member)
                 .fetch();
     }
+
+    public List<MemberExcelDownload> excelDownloadByPaging(int offset, int limit) {
+        return queryFactory
+                .select(new QMemberExcelDownload(
+                        member.name,
+                        member.phone,
+                        member.gender,
+                        member.address.zipCode,
+                        member.address.address,
+                        member.address.addressDetail
+                ))
+                .from(member)
+                .offset(offset)
+                .limit(limit)
+                .fetch();
+    }
+
+    public Long totalCount() {
+        return queryFactory
+                .select(member.count())
+                .from(member)
+                .fetchFirst();
+    }
 }

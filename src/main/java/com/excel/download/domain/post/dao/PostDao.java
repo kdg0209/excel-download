@@ -34,4 +34,28 @@ public class PostDao {
                 .on(member.memberIdx.eq(post.member.memberIdx))
                 .fetch();
     }
+
+    public List<PostExcelDownload> excelDownloadByPaging(int offset, int limit) {
+        return queryFactory
+                .select(new QPostExcelDownload(
+                        post.title,
+                        post.contents,
+                        post.tags.tags,
+                        member.name,
+                        post.createdDate
+                ))
+                .from(post)
+                .innerJoin(member)
+                .on(member.memberIdx.eq(post.member.memberIdx))
+                .offset(offset)
+                .limit(limit)
+                .fetch();
+    }
+
+    public Long totalCount() {
+        return queryFactory
+                .select(post.count())
+                .from(post)
+                .fetchFirst();
+    }
 }
